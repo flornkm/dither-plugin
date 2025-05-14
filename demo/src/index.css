@@ -1,5 +1,5 @@
 @import "tailwindcss";
-@import "../../dist/tailwind-dither-plugin.css";
+@import "dither-plugin";
 
 @font-face {
   font-family: 'Inter Variable';
