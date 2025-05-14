@@ -1,0 +1,36 @@
+{
+  "name": "dither-plugin",
+  "version": "0.0.1",
+  "description": "TailwindCSS plugin for adding dither effects.",
+  "scripts": {
+    "build": "pnpm tailwindcss -i ./src/index.css -o ./dist/dither-plugin.css -m",
+    "format": "prettier --write --ignore-unknown .",
+    "demo": "open demo/index.html"
+  },
+  "exports": "./dist/dither-plugin.css",
+  "main": "./dist/dither-plugin.css",
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "dither",
+    "tailwind dither",
+    "css dither",
+    "dither effect",
+    "pure css dither",
+    "tailwind pure css plugin",
+    "tailwindcss"
+  ],
+  "repository": "flornkm/dither-plugin",
+  "author": {
+    "name": "flornkm",
+    "website": "https://floriankiem.com"
+  },
+  "license": "MIT",
+  "prettier": {
+    "printWidth": 100
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.3.0"
+  }
+}

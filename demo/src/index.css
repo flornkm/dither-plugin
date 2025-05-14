@@ -1,0 +1,58 @@
+@import "tailwindcss";
+@import "../../dist/tailwind-dither-plugin.css";
+
+@font-face {
+  font-family: 'Inter Variable';
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+  src: url("/fonts/sans/InterVariable.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: 'Favorit Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/mono/ABCFavoritMonoEdu-Regular.woff2") format("woff2"),
+       url("/fonts/mono/ABCFavoritMonoEdu-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Favorit Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/mono/ABCFavoritMonoEdu-Medium.woff2") format("woff2"),
+       url("/fonts/mono/ABCFavoritMonoEdu-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Favorit Mono';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/mono/ABCFavoritMonoEdu-Bold.woff2") format("woff2"),
+       url("/fonts/mono/ABCFavoritMonoEdu-Bold.woff") format("woff");
+}
+
+@theme {
+  --font-sans: "Inter Variable", system-ui, sans-serif;
+  --font-mono: "Favorit Mono", system-ui, monospace;
+}
+
+pre {
+  @apply bg-neutral-100;
+}
+
+code {
+  @apply !font-mono;
+}
+
+body {
+  @apply antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply tracking-tight;
+}
