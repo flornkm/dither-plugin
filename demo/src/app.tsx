@@ -6,7 +6,7 @@ function App() {
     <main className="min-h-screen px-4">
       <div className="w-full max-w-5xl mx-auto pb-24">
         <div className="overflow-hidden rounded-b-3xl w-full h-96 mb-8">
-          <img src="/images/sky.webp" alt="Robot" className="w-full object-cover h-full dither " />
+          <img src="/images/sky.webp" alt="Robot" className="w-full object-cover h-full dither" />
         </div>
         <h1 className="text-lg font-semibold mb-1.5 leading-tight">
           The easiest way to use dither effects in the web
@@ -23,7 +23,8 @@ function App() {
               stylesheet:
             </p>
             <div className="font-mono text-sm bg-neutral-100 py-4 px-6 rounded-lg">
-              import "dither-plugin"
+              import "tailwindcss";
+              <br /> import "dither-plugin";
             </div>
           </div>
           <div>

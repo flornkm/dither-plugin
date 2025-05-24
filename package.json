@@ -1,6 +1,6 @@
 {
   "name": "dither-plugin",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "TailwindCSS plugin for adding dither effects.",
   "scripts": {
     "build": "pnpm tailwindcss -i ./src/index.css -o ./dist/dither-plugin.css -m",
