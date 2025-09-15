@@ -8,6 +8,7 @@
         "@tailwindcss/vite": "^4.1.5",
         "@vercel/analytics": "^1.5.0",
         "clsx": "^2.1.1",
+        "dither-plugin": "^0.0.3",
         "lucide-react": "^0.507.0",
         "react": "^19.0.0",
         "react-dom": "^19.0.0",
@@ -332,6 +333,8 @@
     "deep-is": ["deep-is@0.1.4", "", {}, "sha512-oIPzksmTg4/MriiaYGO+okXDT7ztn/w3Eptv/+gSIdMdKsJo0u4CfYNFJPy+4SKMuCqGw2wxnA+URMg3t8a/bQ=="],
 
     "detect-libc": ["detect-libc@2.1.0", "", {}, "sha512-vEtk+OcP7VBRtQZ1EJ3bdgzSfBjgnEalLTp5zjJrS+2Z1w2KZly4SBdac/WDU3hhsNAZ9E8SC96ME4Ey8MZ7cg=="],
+
+    "dither-plugin": ["dither-plugin@0.0.3", "", {}, "sha512-BbmuzBe/kWIsmoDjLKpXqrYsj8svvisC13Mn8ceYvMR91RO/AtEYi0CveaJn64XPus4Sd7bxTs3Lkxg6K/7ypw=="],
 
     "electron-to-chromium": ["electron-to-chromium@1.5.218", "", {}, "sha512-uwwdN0TUHs8u6iRgN8vKeWZMRll4gBkz+QMqdS7DDe49uiK68/UX92lFb61oiFPrpYZNeZIqa4bA7O6Aiasnzg=="],
 
