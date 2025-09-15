@@ -88,7 +88,7 @@ function App() {
           (which makes it unique to other plugins as Safari doesn't support SVG URI data in css
           filters). You can mix it up with other classes and customize it to your needs.
         </p>
-        <div className="sticky bottom-8 bg-black text-neutral-300 rounded-full shadow-xl py-2 px-4 w-auto max-w-lg flex items-center justify-center mx-auto">
+        <div className="sticky text-balance text-center bottom-8 text-balance bg-black text-neutral-300 rounded-full shadow-xl py-2 px-4 w-auto max-w-lg flex items-center justify-center mx-auto">
           <p>
             Like it?{" "}
             <a
