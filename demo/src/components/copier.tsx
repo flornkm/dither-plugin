@@ -7,6 +7,23 @@ const Copier = ({ packageManagers }: { packageManagers: string[] }) => {
   const [copied, setCopied] = useState(false);
   const [packageManager, setPackageManager] = useState(packageManagers[0]);
 
+  const buildCommand = (pm: string) => {
+    switch (pm) {
+      case "npm":
+        return "install";
+      case "yarn":
+        return "add";
+      case "pnpm":
+        return "add";
+      case "bun":
+        return "add";
+      default:
+        return "install";
+    }
+  };
+
+  const command = `${buildCommand(packageManager)} dither-plugin`;
+
   return (
     <div className="flex w-full md:w-auto justify-between items-center gap-4 p-1 pr-[5px] pl-2 rounded-full border bg-neutral-50 border-neutral-200 text-sm">
       <div className="flex items-center gap-2">
@@ -27,13 +44,13 @@ const Copier = ({ packageManagers }: { packageManagers: string[] }) => {
           </div>
         </div>
         <div className="flex items-center gap-2">
-          <p className="font-mono line-clamp-1">install dither-plugin</p>
+          <p className="font-mono line-clamp-1">{command}</p>
         </div>
       </div>
       <Button
         className="py-2 pl-2"
         onClick={() => {
-          navigator.clipboard.writeText(`${packageManager} install dither-plugin`);
+          navigator.clipboard.writeText(packageManager + " " + command);
           setCopied(true);
           setTimeout(() => setCopied(false), 2000);
         }}
