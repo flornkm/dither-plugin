@@ -35,8 +35,8 @@ function App() {
               Import into your <CodeIcon className="inline-block w-3 ml-1 mb-0.5" /> stylesheet:
             </p>
             <div className="font-mono text-sm bg-neutral-100 py-4 px-6 rounded-lg">
-              import "tailwindcss";
-              <br /> import "dither-plugin";
+              @import "tailwindcss";
+              <br /> @import "dither-plugin";
             </div>
           </div>
           <div>
