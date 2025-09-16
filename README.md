@@ -1,4 +1,4 @@
-![masked dither image of a flower](./demo/public/images/banner.webp)
+![masked dither image of a flower](https://dither.floriankiem.com/images/banner.webp)
 
 # TailwindCSS Dither Plugin (Safari Compatible)
 
