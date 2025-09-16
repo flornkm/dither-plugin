@@ -143,9 +143,12 @@ function App() {
               X <span className="hidden min-[390px]:inline">(Twitter)</span>
             </a>
           </div>
-          <button className="text-black text-sm cursor-pointer font-medium bg-white hover:bg-neutral-200 transition-all rounded-full px-2 py-1">
-            Create image
-          </button>
+          <a
+            href="https://www.npmjs.com/package/dither-plugin"
+            className="text-black text-sm cursor-pointer font-medium bg-white hover:bg-neutral-200 transition-all rounded-full px-2 py-1"
+          >
+            Download
+          </a>
         </div>
       </div>
     </main>
