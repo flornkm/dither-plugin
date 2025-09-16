@@ -5,26 +5,72 @@
  * @license MIT
  */
 
- @utility dither {
-     --dither-gray: 1;
-     --dither-contrast: 120;
-     --dither-bright: 1;
-     --dither-blur: 0px;
-     --dither-cell: 20px;
-     --dither-opacity: 1;
-     --dither-image: url("https://dither.floriankiem.com/bayer.png");
+@theme {
+  --dither-cell-xs: 8px;
+  --dither-cell-sm: 12px;
+  --dither-cell-md: 16px;
+  --dither-cell-lg: 20px;
+  --dither-cell-xl: 28px;
+  --dither-cell-2xl: 40px;
+}
 
-     position: relative;
-     isolation: isolate;
-     overflow: hidden;
-     z-index: 0;
-     background: #000;
+@utility dither {
+  --dither-gray: 1;
+  --dither-contrast: 120;
+  --dither-bright: 1;
+  --dither-blur: 0px;
+  --dither-cell: var(--dither-cell-lg);
+  --dither-opacity: 1;
+  --dither-image: url("https://dither.floriankiem.com/bayer.png");
 
-     filter:
-        grayscale(var(--dither-gray))
-        brightness(var(--dither-bright))
-        blur(var(--dither-blur))
-        contrast(var(--dither-contrast));
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  z-index: 0;
+  background: #000;
+
+  filter:
+    grayscale(var(--dither-gray))
+    brightness(var(--dither-bright))
+    blur(var(--dither-blur))
+    contrast(var(--dither-contrast));
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    background-image: var(--dither-image);
+    background-repeat: repeat;
+    background-size: var(--dither-cell) var(--dither-cell);
+    background-position: 0 0;
+    image-rendering: pixelated;
+    opacity: var(--dither-opacity);
+    mix-blend-mode: screen;
+  }
+}
+
+@utility dither-* {
+  --dither-gray: 1;
+  --dither-contrast: 120;
+  --dither-bright: 1;
+  --dither-blur: 0px;
+  --dither-cell: --value(--dither-cell-*, number);
+  --dither-opacity: 1;
+  --dither-image: url("https://dither.floriankiem.com/bayer.png");
+
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  z-index: 0;
+  background: #000;
+
+  filter:
+    grayscale(var(--dither-gray))
+    brightness(var(--dither-bright))
+    blur(var(--dither-blur))
+    contrast(var(--dither-contrast));
 
   &::after {
     content: "";
@@ -45,9 +91,5 @@
 @utility dither-none {
   filter: none !important;
   background: none !important;
-
-  &::after {
-    content: none !important;
-    background: none !important;
-  }
+  &::after { content: none !important; background: none !important; }
 }
