@@ -1,5 +1,6 @@
 import Copier from "./components/copier";
 import { CodeIcon, ComponentIcon } from "./components/icon";
+import DitherHover from "./components/dither-hover";
 
 function App() {
   return (
@@ -95,6 +96,21 @@ function App() {
             </div>
             <p className="text-xs mb-2 text-neutral-500">
               Make your text and custom styles dithered
+            </p>
+          </div>
+          <div className="gap-2 flex flex-col">
+            <div className="rounded-sm overflow-hidden">
+              <DitherHover
+                src="/videos/flowers.webm"
+                alt="Flower hover reveal"
+                className="w-full h-96 rounded-sm border border-neutral-200"
+                imgClassName="object-cover object-top"
+                invert
+                feather={24}
+              />
+            </div>
+            <p className="text-xs mb-2 text-neutral-500">
+              Use it with advanced effects and CSS filters
             </p>
           </div>
         </div>
