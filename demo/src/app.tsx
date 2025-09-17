@@ -119,7 +119,7 @@ function App() {
           filters). You can mix it up with other classes and customize it to your needs.
         </p>
         {/*<Avatar />*/}
-        <div className="sticky gap-6 text-balance bottom-4 lg:bottom-8 bg-black text-neutral-300 rounded-full shadow-xl p-2 w-auto max-w-lg flex items-center justify-center mx-auto">
+        <div className="sticky gap-6 text-balance bottom-4 lg:bottom-8 bg-black text-neutral-300 rounded-full lg:shadow-xl p-2 w-auto max-w-lg flex items-center justify-center mx-auto">
           <div className="flex items-center gap-2">
             <a
               target="_blank"
