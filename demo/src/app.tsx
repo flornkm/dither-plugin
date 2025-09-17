@@ -102,7 +102,6 @@ function App() {
             <div className="rounded-sm overflow-hidden">
               <DitherHover
                 src="/videos/flowers.webm"
-                alt="Flower hover reveal"
                 className="w-full h-96 rounded-sm border border-neutral-200"
                 imgClassName="object-cover object-top"
                 invert
