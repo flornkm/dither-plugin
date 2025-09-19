@@ -19,26 +19,24 @@ jobs:
         with:
           fetch-depth: 0
 
+      # Node is needed for semantic-release and npm publish
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
           registry-url: https://registry.npmjs.org
+          cache: 'npm'
 
-      - name: Setup Bun
-        uses: oven-sh/setup-bun@v1
-        with:
-          bun-version: 1.1.x
+      - name: Install deps (npm ci if locked)
+        if: hashFiles('**/package-lock.json') != ''
+        run: npm ci --no-audit --fund=false
 
-      - name: Install deps (Bun)
-        run: bun install --frozen-lockfile || bun install
+      - name: Install deps (npm install if no lockfile)
+        if: hashFiles('**/package-lock.json') == ''
+        run: npm install --no-audit --fund=false
 
-      - name: Build (Bun, if script exists)
-        shell: bash
-        run: |
-          node -e "const p=require('./package.json'); process.exit(!(p.scripts && p.scripts.build));" \
-          && bun run build \
-          || echo 'No build script, skipping.'
+      - name: Build (if script exists)
+        run: npm run build --if-present
 
       - name: Semantic Release
         id: semantic
