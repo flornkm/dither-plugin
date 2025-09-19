@@ -21,7 +21,7 @@ function App() {
           />
         </div>
         <h1 className="text-lg text-center font-semibold mb-1.5 leading-tight">
-          Dither Plugin - The easiest way to add dither effects in the web
+          Dither Plugin - The easiest way to add dither effects on the web
         </h1>
         <p className="text-sm text-center text-neutral-500 mb-6 max-w-lg mx-auto">
           The dither plugin for TailwindCSS is adding a dither effect to your elements by using
