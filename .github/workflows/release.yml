@@ -48,6 +48,7 @@ jobs:
             @semantic-release/github
             @semantic-release/changelog
             @semantic-release/git
+            conventional-changelog-conventionalcommits
 
       - name: Publish to GitHub Packages (scoped)
         if: steps.semantic.outputs.new_release_published == 'true'
