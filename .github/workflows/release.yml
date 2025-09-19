@@ -14,7 +14,8 @@ jobs:
       pull-requests: write
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
@@ -25,6 +26,7 @@ jobs:
 
       - name: Install deps
         run: npm install --no-audit --fund=false
+
       - name: Build (if script exists)
         run: npm run build --if-present
 
@@ -54,10 +56,26 @@ jobs:
         if: steps.semantic.outputs.new_release_published == 'true'
         shell: bash
         run: |
+          set -euo pipefail
+
           OWNER_LC=$(echo "${GITHUB_REPOSITORY%%/*}" | tr '[:upper:]' '[:lower:]')
-          VERSION="${{ steps.semantic.outputs.new_release_version }}"  # <-- use this
-          # ...rest unchanged...
-          cp package.json package.json.bak
-          node -e "let p=require('./package.json'); p.name='@${OWNER_LC}/dither-plugin'; p.version='${VERSION}'; require('fs').writeFileSync('package.json', JSON.stringify(p,null,2))"
-          npm publish --registry=https://npm.pkg.github.com
-          mv -f package.json.bak package.json
+          VERSION="${{ steps.semantic.outputs.new_release_version }}"
+
+          if [ -z "$VERSION" ]; then
+            echo "Missing new_release_version"
+            exit 1
+          fi
+
+          cat > .npmrc <<EOF
+          @${OWNER_LC}:registry=https://npm.pkg.github.com
+          //npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}
+          always-auth=true
+          EOF
+
+                    cp package.json package.json.bak
+                    node -e "let p=require('./package.json'); p.name='@${OWNER_LC}/dither-plugin'; p.version='${VERSION}'; require('fs').writeFileSync('package.json', JSON.stringify(p,null,2))"
+
+                    npm publish --registry=https://npm.pkg.github.com --userconfig=.npmrc
+
+                    mv -f package.json.bak package.json
+                    rm -f .npmrc
