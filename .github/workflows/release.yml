@@ -25,11 +25,20 @@ jobs:
           node-version: 20
           registry-url: https://registry.npmjs.org
 
-      - name: Install deps
-        run: npm ci
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: 1.1.x
 
-      - name: Build (optional)
-        run: npm run build --if-present
+      - name: Install deps (Bun)
+        run: bun install --frozen-lockfile || bun install
+
+      - name: Build (Bun, if script exists)
+        shell: bash
+        run: |
+          node -e "const p=require('./package.json'); process.exit(!(p.scripts && p.scripts.build));" \
+          && bun run build \
+          || echo 'No build script, skipping.'
 
       - name: Semantic Release
         id: semantic
