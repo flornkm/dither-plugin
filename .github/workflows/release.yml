@@ -7,7 +7,6 @@ on:
 jobs:
   release:
     runs-on: ubuntu-latest
-
     permissions:
       contents: write
       packages: write
@@ -25,11 +24,18 @@ jobs:
           node-version: 20
           registry-url: https://registry.npmjs.org
 
-      - name: Install deps (no lockfile)
+      - name: Install deps
         run: npm install --no-audit --fund=false
 
       - name: Build (if script exists)
         run: npm run build --if-present
+
+      - name: Verify npm auth
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
+          npm whoami
 
       - name: Semantic Release
         id: semantic
@@ -50,12 +56,8 @@ jobs:
         run: |
           OWNER_LC=$(echo "${GITHUB_REPOSITORY%%/*}" | tr '[:upper:]' '[:lower:]')
           VERSION="${{ steps.semantic.outputs.released_version }}"
-
-          # Configure npm for GPR
           echo "@${OWNER_LC}:registry=https://npm.pkg.github.com" >> .npmrc
           echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" >> .npmrc
-
-          # Backup, rewrite name & version, publish, then restore
           cp package.json package.json.bak
           node -e "let p=require('./package.json'); p.name='@${OWNER_LC}/dither-plugin'; p.version='${VERSION}'; require('fs').writeFileSync('package.json', JSON.stringify(p,null,2))"
           npm publish --registry=https://npm.pkg.github.com
