@@ -1,0 +1,23 @@
+# TailwindCSS Dither Plugin
+
+> Safari‑compatible TailwindCSS plugin for adding performant, accessible dither effects without SVG filters. Provides utilities from `dither-xs` up to `dither-2xl` and a `dither` wrapper class for easy application.
+
+This project ships as a CSS plugin you can import alongside TailwindCSS. Apply the `dither` class to a wrapper element (not directly to `img`, `video`, `iframe`, `canvas`, or `input`) to enable the effect on its contents. You can combine with utilities like `contrast-[1000%]` for vivid, colorized dithering. See links below for setup and usage details.
+
+## Getting Started
+
+- [README.md (GitHub)](https://github.com/flornkm/dither-plugin/blob/main/README.md): Installation, basic usage, and links to docs.
+- [Documentation & Examples](https://dither.floriankiem.com/): Live examples and guidance.
+
+## Agent Instructions
+
+- [AGENTS.md (GitHub)](https://github.com/flornkm/dither-plugin/blob/main/AGENTS.md): Environment setup and Tailwind class usage for agents and automations.
+
+## Project
+
+- [Repository](https://github.com/flornkm/dither-plugin): Source code and issues.
+- [Homepage](https://dither.floriankiem.com/): Single‑page site with examples and references.
+
+## Optional
+
+- [Author](https://floriankiem.com): Maintainer information.

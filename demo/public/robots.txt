@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dither.floriankiem.com/sitemap.xml
