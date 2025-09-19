@@ -1,3 +1,9 @@
+## [1.0.1](https://github.com/flornkm/dither-plugin/compare/v1.0.0...v1.0.1) (2025-09-19)
+
+### Bug Fixes
+
+* remove divider from readme ([cf6012f](https://github.com/flornkm/dither-plugin/commit/cf6012f0d1c8aa368d27b1393f1312465329cf78))
+
 ## 1.0.0 (2025-09-19)
 
 ### Features
