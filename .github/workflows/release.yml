@@ -22,19 +22,18 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          registry-url: https://registry.npmjs.org
 
       - name: Install deps
         run: npm install --no-audit --fund=false
-
       - name: Build (if script exists)
         run: npm run build --if-present
 
-      - name: Verify npm auth
+      - name: Configure npm auth (npmjs)
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
-          echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
+          rm -f ~/.npmrc
+          printf "//registry.npmjs.org/:_authToken=%s\n" "${NPM_TOKEN}" > ~/.npmrc
           npm whoami
 
       - name: Semantic Release
@@ -56,9 +55,14 @@ jobs:
         run: |
           OWNER_LC=$(echo "${GITHUB_REPOSITORY%%/*}" | tr '[:upper:]' '[:lower:]')
           VERSION="${{ steps.semantic.outputs.released_version }}"
-          echo "@${OWNER_LC}:registry=https://npm.pkg.github.com" >> .npmrc
-          echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" >> .npmrc
+          # separate .npmrc for GPR
+          cp ~/.npmrc ~/.npmrc.back
+          {
+            printf "@%s:registry=https://npm.pkg.github.com\n" "${OWNER_LC}"
+            printf "//npm.pkg.github.com/:_authToken=%s\n" "${{ secrets.GITHUB_TOKEN }}"
+          } >> ~/.npmrc
           cp package.json package.json.bak
           node -e "let p=require('./package.json'); p.name='@${OWNER_LC}/dither-plugin'; p.version='${VERSION}'; require('fs').writeFileSync('package.json', JSON.stringify(p,null,2))"
           npm publish --registry=https://npm.pkg.github.com
           mv -f package.json.bak package.json
+          mv -f ~/.npmrc.back ~/.npmrc
