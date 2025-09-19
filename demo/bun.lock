@@ -8,7 +8,7 @@
         "@tailwindcss/vite": "^4.1.5",
         "@vercel/analytics": "^1.5.0",
         "clsx": "^2.1.1",
-        "dither-plugin": "^0.0.4",
+        "dither-plugin": "^1.0.2",
         "html2canvas": "^1.4.1",
         "lucide-react": "^0.507.0",
         "react": "^19.0.0",
@@ -339,7 +339,7 @@
 
     "detect-libc": ["detect-libc@2.1.0", "", {}, "sha512-vEtk+OcP7VBRtQZ1EJ3bdgzSfBjgnEalLTp5zjJrS+2Z1w2KZly4SBdac/WDU3hhsNAZ9E8SC96ME4Ey8MZ7cg=="],
 
-    "dither-plugin": ["dither-plugin@0.0.4", "", {}, "sha512-+iI9h0T8v5/vfGkjfi/yuFRS1xyOeDuQxnAI0NgVgnjBqLq4WZdNGFK6K3wvOGSmxTu/lZC8Hga6UtlYxGXgSw=="],
+    "dither-plugin": ["dither-plugin@1.0.2", "", {}, "sha512-TT6C3cWebxntyL4/5spxSFEJl3AhqHrOP6PQW/koeQ0MjNGkOgOPGbL2Og+iVvwtl+okzTBE7Sn59ro5eJvhtw=="],
 
     "electron-to-chromium": ["electron-to-chromium@1.5.218", "", {}, "sha512-uwwdN0TUHs8u6iRgN8vKeWZMRll4gBkz+QMqdS7DDe49uiK68/UX92lFb61oiFPrpYZNeZIqa4bA7O6Aiasnzg=="],
 
