@@ -19,20 +19,13 @@ jobs:
         with:
           fetch-depth: 0
 
-      # Node is needed for semantic-release and npm publish
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
           registry-url: https://registry.npmjs.org
-          cache: 'npm'
 
-      - name: Install deps (npm ci if locked)
-        if: hashFiles('**/package-lock.json') != ''
-        run: npm ci --no-audit --fund=false
-
-      - name: Install deps (npm install if no lockfile)
-        if: hashFiles('**/package-lock.json') == ''
+      - name: Install deps (no lockfile)
         run: npm install --no-audit --fund=false
 
       - name: Build (if script exists)
