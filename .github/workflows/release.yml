@@ -1,0 +1,62 @@
+name: Release
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+      packages: write
+      issues: write
+      pull-requests: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          registry-url: https://registry.npmjs.org
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Build (optional)
+        run: npm run build --if-present
+
+      - name: Semantic Release
+        id: semantic
+        uses: cycjimmy/semantic-release-action@v4
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        with:
+          extra_plugins: |
+            @semantic-release/npm
+            @semantic-release/github
+            @semantic-release/changelog
+            @semantic-release/git
+
+      - name: Publish to GitHub Packages (scoped)
+        if: steps.semantic.outputs.new_release_published == 'true'
+        shell: bash
+        run: |
+          OWNER_LC=$(echo "${GITHUB_REPOSITORY%%/*}" | tr '[:upper:]' '[:lower:]')
+          VERSION="${{ steps.semantic.outputs.released_version }}"
+
+          # Configure npm for GPR
+          echo "@${OWNER_LC}:registry=https://npm.pkg.github.com" >> .npmrc
+          echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" >> .npmrc
+
+          # Backup, rewrite name & version, publish, then restore
+          cp package.json package.json.bak
+          node -e "let p=require('./package.json'); p.name='@${OWNER_LC}/dither-plugin'; p.version='${VERSION}'; require('fs').writeFileSync('package.json', JSON.stringify(p,null,2))"
+          npm publish --registry=https://npm.pkg.github.com
+          mv -f package.json.bak package.json
