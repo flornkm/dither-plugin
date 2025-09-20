@@ -1,3 +1,9 @@
+## [1.1.0](https://github.com/flornkm/dither-plugin/compare/v1.0.2...v1.1.0) (2025-09-20)
+
+### Features
+
+* inline dither image for faster loading ([23c9189](https://github.com/flornkm/dither-plugin/commit/23c91896294030d409da7fab2b2494e2079a1540))
+
 ## [1.0.2](https://github.com/flornkm/dither-plugin/compare/v1.0.1...v1.0.2) (2025-09-19)
 
 ### Bug Fixes
