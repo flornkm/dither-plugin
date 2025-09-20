@@ -164,6 +164,7 @@ function App() {
             </a>
           </div>
           <a
+            target="_blank"
             href="https://www.npmjs.com/package/dither-plugin"
             className="text-black text-sm cursor-pointer font-medium bg-white hover:bg-neutral-200 transition-all rounded-full px-2 py-1"
           >
