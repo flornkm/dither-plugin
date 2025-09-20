@@ -21,7 +21,9 @@
   --dither-blur: 0px;
   --dither-cell: var(--dither-cell-lg);
   --dither-opacity: 1;
-  --dither-image: url("https://dither.floriankiem.com/bayer.png");
+
+  /* URI contains the default bayer dither */
+  --dither-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAu0lEQVQ4T6WSMQqFMBBEE2wDXiVgG8gtglilCuIpcoogVqlEPIVgK3gVIa2Qzw9YbIpttlqGgbcMM5wxlr33LMbI/nccx3I/PQwD0LXPj+OgAaSUBWCtLZ+2bSv308uyAF37/HkeGkAIASL0fQ8yT9MEdO3z67poAKUUiDDPM8i87zvQtc/f96UBmqZBazTG4Ds4z5MG6LoOrTGEgO8gpUQDtG2L1uicw3dw3zcNoLVGa1zXFd9BzpkE+AFp94/4eKx9+AAAAABJRU5ErkJggg==");
 
   position: relative;
   isolation: isolate;
@@ -58,7 +60,9 @@
   --dither-blur: 0px;
   --dither-cell: --value(--dither-cell-*, number);
   --dither-opacity: 1;
-  --dither-image: url("https://dither.floriankiem.com/bayer.png");
+
+  /* URI contains the default bayer dither */
+  --dither-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAu0lEQVQ4T6WSMQqFMBBEE2wDXiVgG8gtglilCuIpcoogVqlEPIVgK3gVIa2Qzw9YbIpttlqGgbcMM5wxlr33LMbI/nccx3I/PQwD0LXPj+OgAaSUBWCtLZ+2bSv308uyAF37/HkeGkAIASL0fQ8yT9MEdO3z67poAKUUiDDPM8i87zvQtc/f96UBmqZBazTG4Ds4z5MG6LoOrTGEgO8gpUQDtG2L1uicw3dw3zcNoLVGa1zXFd9BzpkE+AFp94/4eKx9+AAAAABJRU5ErkJggg==");
 
   position: relative;
   isolation: isolate;
