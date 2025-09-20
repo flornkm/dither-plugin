@@ -1,3 +1,9 @@
+## [1.1.1](https://github.com/flornkm/dither-plugin/compare/v1.1.0...v1.1.1) (2025-09-20)
+
+### Bug Fixes
+
+* share data uri ([82c54ce](https://github.com/flornkm/dither-plugin/commit/82c54ce7222270d081a9ec3854a9638a035e8876))
+
 ## [1.1.0](https://github.com/flornkm/dither-plugin/compare/v1.0.2...v1.1.0) (2025-09-20)
 
 ### Features
