@@ -4,8 +4,8 @@ import DitherHover from "./components/dither-hover";
 
 function App() {
   return (
-    <main className="min-h-screen px-4 py-4">
-      <div className="w-full max-w-3xl flex flex-col items-center mx-auto pb-24">
+    <main className="min-h-screen px-4 pt-4">
+      <div className="w-full max-w-3xl flex flex-col items-center mx-auto">
         <div className="relative h-72 overflow-hidden mb-12 rounded-sm border border-neutral-200">
           <div className="w-full dither">
             <img
@@ -56,15 +56,15 @@ function App() {
             </p>
           </div>
         </div>
-        <h2 className="font-semibold mb-4 w-full">What is it capable of?</h2>
-        <div className="space-y-8 mb-24">
+        <h2 className="font-semibold mb-4 w-full select-none">What is it capable of?</h2>
+        <div className="space-y-8 mb-8">
           <div className="gap-2 flex flex-col">
             <div className="rounded-sm overflow-hidden bg-white border border-neutral-200">
               <div className="overflow-hidden w-full h-96 dither transition-all active:dither-xl">
                 <img
                   src="/images/cat.webp"
                   alt="Cat"
-                  className="w-full h-full object-cover select-none"
+                  className="w-full h-full object-cover select-none pointer-events-none"
                 />
               </div>
             </div>
@@ -99,27 +99,33 @@ function App() {
             </p>
           </div>
           <div className="gap-2 flex flex-col">
-            <div className="rounded-sm overflow-hidden">
-              <DitherHover
-                src="/videos/flowers.webm"
-                className="w-full h-96 rounded-sm border border-neutral-200"
-                imgClassName="object-cover object-top"
-                invert
-                feather={24}
-              />
+            <div className="rounded-sm overflow-hidden bg-white border border-neutral-200">
+              <div className="w-full h-96 dither-xs contrast-[1000%]">
+                <video
+                  src="/videos/player.mp4"
+                  className="w-full h-full object-cover"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                />
+              </div>
             </div>
             <p className="text-xs mb-2 text-neutral-500">
               Use it with advanced effects and CSS filters
             </p>
           </div>
         </div>
-        <p className="text-sm text-neutral-500 mb-24">
-          The best thing is, it is fully compatible with Tailwind CSS and runs in every browser
-          (which makes it unique to other plugins as Safari doesn't support SVG URI data in css
-          filters). You can mix it up with other classes and customize it to your needs.
-        </p>
-        {/*<Avatar />*/}
-        <div className="sticky gap-6 text-balance bottom-4 lg:bottom-8 bg-black text-neutral-300 rounded-full lg:shadow-xl p-2 w-auto max-w-lg flex items-center justify-center mx-auto">
+        <div className="relative w-[calc(100vw-1rem)] -mb-12 mx-auto left-1/2 -translate-x-1/2 overflow-hidden">
+          <p className="text-sm relative z-10 pt-12 max-w-sm mx-auto text-center text-balance pb-72">
+            The best thing is, it is fully compatible with Tailwind CSS and runs in every browser
+            (which makes it unique to other plugins as Safari doesn't support SVG URI data in css
+            filters). You can mix it up with other classes and customize it to your needs.
+          </p>
+          <div className="absolute inset-0 bg-gradient-to-t from-neutral-600 to-neutral-400 dither" />
+        </div>
+        <div className="sticky z-50 gap-6 text-balance bottom-4 lg:bottom-8 bg-black text-neutral-300 rounded-full lg:shadow-xl p-2 w-auto max-w-lg flex items-center justify-center mx-auto">
           <div className="flex items-center gap-2">
             <a
               target="_blank"
