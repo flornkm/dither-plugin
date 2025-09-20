@@ -1,6 +1,5 @@
 import Copier from "./components/copier";
 import { CodeIcon, ComponentIcon } from "./components/icon";
-import DitherHover from "./components/dither-hover";
 
 function App() {
   return (
