@@ -17,6 +17,7 @@
     "dither-plugin": "^1.1.1",
     "html2canvas": "^1.4.1",
     "lucide-react": "^0.507.0",
+    "motion": "^12.38.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "tailwind-merge": "^3.3.1",
