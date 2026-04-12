@@ -29,7 +29,7 @@ function CodeField({ code, prefix }: { code: string; prefix?: string }) {
       </div>
       <button
         onClick={copy}
-        className="relative text-sm cursor-pointer text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-300 font-medium h-5 w-12 shrink-0"
+        className="relative text-sm cursor-pointer text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-300 font-medium h-5 w-12 shrink-0 text-right"
       >
         <AnimatePresence mode="wait" initial={false}>
           <motion.span
