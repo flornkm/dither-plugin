@@ -64,7 +64,7 @@ function App() {
         {/* Example */}
         <div className="w-full">
           <h2 className="font-semibold mb-4 leading-tight">Example</h2>
-          <div className="relative size-72 overflow-hidden rounded-2xl">
+          <div className="relative size-72 overflow-hidden">
             <div className="dark:invert">
               <div className="w-full dither">
                 <img
