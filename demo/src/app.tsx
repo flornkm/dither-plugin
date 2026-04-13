@@ -52,10 +52,10 @@ function App() {
   const [pm, setPm] = useState(0);
 
   return (
-    <main className="min-h-screen px-4 pt-4 pb-16">
+    <main className="min-h-screen px-4 pt-4 md:py-20">
       <div className="w-full max-w-3xl flex space-y-8 flex-col items-start mx-auto">
         <div className="space-y-2">
-          <h1 className="text-base font-semibold leading-tight">Dither Plugin</h1>
+          <h1 className="text-base font-medium leading-tight">Dither Plugin</h1>
           <p className="text-sm mb-1.5 leading-tight text-neutral-400">
             A CSS-only Tailwind plugin that adds dither effects to your elements.
           </p>
@@ -63,7 +63,7 @@ function App() {
 
         {/* Example */}
         <div className="w-full">
-          <h2 className="font-semibold mb-4 leading-tight">Example</h2>
+          <h2 className="font-medium mb-4 leading-tight">Example</h2>
           <div className="relative size-72 overflow-hidden">
             <div className="dark:invert">
               <div className="w-full dither">
@@ -84,7 +84,7 @@ function App() {
 
         {/* Install */}
         <div className="w-full space-y-3">
-          <h2 className="font-semibold leading-tight">Install</h2>
+          <h2 className="font-medium leading-tight">Install</h2>
           <div className="flex items-center gap-3">
             {INSTALL_COMMANDS.map((p, i) => (
               <button
@@ -106,17 +106,13 @@ function App() {
 
         {/* Usage */}
         <div className="w-full space-y-3">
-          <h2 className="font-semibold leading-tight">Usage</h2>
+          <h2 className="font-medium leading-tight">Usage</h2>
           <div>
-            <h3 className="text-sm mb-1.5 leading-tight text-neutral-400">
-              Tailwind stylesheet
-            </h3>
+            <h3 className="text-sm mb-1.5 leading-tight text-neutral-400">Tailwind stylesheet</h3>
             <CodeField code="@import 'dither-plugin';" />
           </div>
           <div>
-            <h3 className="text-sm mb-1.5 leading-tight text-neutral-400">
-              Element classes
-            </h3>
+            <h3 className="text-sm mb-1.5 leading-tight text-neutral-400">Element classes</h3>
             <CodeField code={`<div className='dither-sm'>\n  <img src='...' />\n</div>`} />
           </div>
         </div>
