@@ -52,7 +52,7 @@ function App() {
   const [pm, setPm] = useState(0);
 
   return (
-    <main className="min-h-screen px-4 pt-4 md:py-20">
+    <main className="min-h-screen px-4 pt-4 pb-8 md:py-20">
       <div className="w-full max-w-3xl flex space-y-8 flex-col items-start mx-auto">
         <div className="space-y-2">
           <h1 className="text-base font-medium leading-tight">Dither Plugin</h1>
