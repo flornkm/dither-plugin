@@ -1,44 +1,30 @@
 @import "tailwindcss";
 @import "dither-plugin";
 
+/* Brand fonts, served from cdn.floriankiem.com (see flornkm/cdn).
+   Haas Recast is licensed (Dalton Maag, Host & Link) — do not copy
+   the font files into this repo. */
 @font-face {
-  font-family: "Pretendard";
+  font-family: "Haas Recast";
   font-style: normal;
   font-weight: 100 900;
   font-display: swap;
-  src: url("/fonts/sans/PretendardVariable.ttf") format("truetype");
+  src: url("https://cdn.floriankiem.com/fonts/haas-recast/v1/HaasRecastVF.woff2")
+    format("woff2");
 }
 
 @font-face {
-  font-family: "Favorit Mono";
+  font-family: "Commit Mono";
   font-style: normal;
-  font-weight: 400;
+  font-weight: 200 700;
   font-display: swap;
-  src: url("/fonts/mono/ABCFavoritMonoEdu-Regular.woff2") format("woff2"),
-    url("/fonts/mono/ABCFavoritMonoEdu-Regular.woff") format("woff");
-}
-
-@font-face {
-  font-family: "Favorit Mono";
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url("/fonts/mono/ABCFavoritMonoEdu-Medium.woff2") format("woff2"),
-    url("/fonts/mono/ABCFavoritMonoEdu-Regular.woff") format("woff");
-}
-
-@font-face {
-  font-family: "Favorit Mono";
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url("/fonts/mono/ABCFavoritMonoEdu-Bold.woff2") format("woff2"),
-    url("/fonts/mono/ABCFavoritMonoEdu-Bold.woff") format("woff");
+  src: url("https://cdn.floriankiem.com/fonts/commit-mono/v1/commit-mono-var.woff2")
+    format("woff2");
 }
 
 @theme {
-  --font-sans: "Pretendard", system-ui, sans-serif;
-  --font-mono: "Favorit Mono", system-ui, monospace;
+  --font-sans: "Haas Recast", system-ui, sans-serif;
+  --font-mono: "Commit Mono", ui-monospace, monospace;
 }
 
 body {
