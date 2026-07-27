@@ -112,7 +112,7 @@ function App() {
         </div>
 
         {/* Usage */}
-        <div className="w-full space-y-3">
+        <div className="w-full space-y-6">
           <h2 className="font-medium leading-tight">Usage</h2>
           <div>
             <h3 className="text-sm mb-1.5 leading-tight text-neutral-400">Tailwind stylesheet</h3>
@@ -129,7 +129,7 @@ function App() {
           <a
             href="https://x.com/flornkm"
             target="_blank"
-            className="text-neutral-500 hover:text-neutral-900 dark:hover:text-white transition-colors"
+            className="text-neutral-500 dark:text-neutral-200 hover:text-neutral-900 dark:hover:text-white transition-colors"
           >
             Florian Kiem
           </a>
