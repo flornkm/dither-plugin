@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@central-icons-react/round-outlined-radius-1-stroke-2": "^1.1.184",
     "@tailwindcss/postcss": "^4.1.13",
     "@tailwindcss/vite": "^4.1.13",
     "@vercel/analytics": "^1.5.0",

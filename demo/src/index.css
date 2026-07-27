@@ -1,6 +1,11 @@
 @import "tailwindcss";
 @import "dither-plugin";
 
+/* Drive `dark:` off a class instead of the media query, so the toggle in the
+   header can override the system setting. The inline script in index.html puts
+   the class on <html> before the first paint. */
+@custom-variant dark (&:where(.dark, .dark *));
+
 /* Brand fonts, served from cdn.floriankiem.com (see flornkm/cdn).
    Haas Recast is licensed (Dalton Maag, Host & Link) — do not copy
    the font files into this repo. */
@@ -9,8 +14,7 @@
   font-style: normal;
   font-weight: 100 900;
   font-display: swap;
-  src: url("https://cdn.floriankiem.com/fonts/haas-recast/v1/HaasRecastVF.woff2")
-    format("woff2");
+  src: url("https://cdn.floriankiem.com/fonts/haas-recast/v1/HaasRecastVF.woff2") format("woff2");
 }
 
 @font-face {
@@ -18,8 +22,7 @@
   font-style: normal;
   font-weight: 200 700;
   font-display: swap;
-  src: url("https://cdn.floriankiem.com/fonts/commit-mono/v1/commit-mono-var.woff2")
-    format("woff2");
+  src: url("https://cdn.floriankiem.com/fonts/commit-mono/v1/commit-mono-var.woff2") format("woff2");
 }
 
 @theme {

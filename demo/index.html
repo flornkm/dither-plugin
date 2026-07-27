@@ -3,8 +3,25 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/favicon-light.svg" media="(prefers-color-scheme: light)" />
-  <link rel="icon" type="image/svg+xml" href="/favicon-dark.svg" media="(prefers-color-scheme: dark)" />
+  <link rel="icon" type="image/svg+xml" href="/favicon-light.svg" />
+  <script>
+    // Paint the stored theme before the first frame, so a dark-mode reload
+    // never flashes white. Kept in sync with src/utils/theme.ts.
+    (function () {
+      try {
+        var stored = localStorage.getItem("theme");
+        var dark =
+          stored === "dark" ||
+          (stored !== "light" && matchMedia("(prefers-color-scheme: dark)").matches);
+        document.documentElement.classList.toggle("dark", dark);
+        document.documentElement.style.colorScheme = dark ? "dark" : "light";
+        var favicon = document.querySelector("link[rel='icon']");
+        if (favicon) favicon.href = dark ? "/favicon-dark.svg" : "/favicon-light.svg";
+        var themeColor = document.querySelector("meta[name='theme-color']");
+        if (themeColor) themeColor.content = dark ? "#000000" : "#ffffff";
+      } catch (e) {}
+    })();
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="preconnect" href="https://cdn.floriankiem.com" crossorigin />
   <title>Dither Plugin for Tailwind CSS</title>

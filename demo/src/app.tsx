@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { ThemeToggle } from "./components/theme-toggle";
+import { useTheme } from "./utils/theme";
 import { motion, AnimatePresence } from "motion/react";
 import { cn } from "./utils/cn";
 
@@ -49,16 +51,20 @@ function CodeField({ code, prefix }: { code: string; prefix?: string }) {
 }
 
 function App() {
+  const { theme, setTheme } = useTheme();
   const [pm, setPm] = useState(0);
 
   return (
     <main className="min-h-screen px-4 pt-4 pb-8 md:py-20">
       <div className="w-full max-w-3xl flex space-y-8 flex-col items-start mx-auto">
-        <div className="space-y-2">
-          <h1 className="text-base font-medium leading-tight">Dither Plugin</h1>
-          <p className="text-sm mb-1.5 leading-tight text-neutral-400">
-            A CSS-only Tailwind plugin that adds dither effects to your elements.
-          </p>
+        <div className="w-full flex items-start justify-between gap-4">
+          <div className="space-y-2">
+            <h1 className="text-base font-medium leading-tight">Dither Plugin</h1>
+            <p className="text-sm mb-1.5 leading-tight text-neutral-400">
+              A CSS-only Tailwind plugin that adds dither effects to your elements.
+            </p>
+          </div>
+          <ThemeToggle theme={theme} onChange={setTheme} />
         </div>
 
         {/* Example */}
