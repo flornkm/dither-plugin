@@ -3,6 +3,7 @@ import { ThemeToggle } from "./components/theme-toggle";
 import { useTheme } from "./utils/theme";
 import { motion, AnimatePresence } from "motion/react";
 import { cn } from "./utils/cn";
+import { detectLanguage, highlight } from "./utils/highlight";
 
 const INSTALL_COMMANDS = [
   { label: "npm", command: "npm i dither-plugin" },
@@ -23,9 +24,9 @@ function CodeField({ code, prefix }: { code: string; prefix?: string }) {
   return (
     <div className="flex items-start justify-between gap-3 w-full rounded-xl border border-neutral-200 dark:border-neutral-800 px-4 py-3 overflow-hidden">
       <div className="min-w-0 flex-1 relative">
-        <pre className="tabular-nums font-normal text-sm whitespace-pre overflow-x-auto scrollbar-none">
+        <pre className="tabular-nums font-normal text-sm whitespace-pre overflow-x-auto scrollbar-none text-neutral-600 dark:text-neutral-300">
           {prefix && <span className="text-neutral-300 dark:text-neutral-600 mr-2">{prefix}</span>}
-          {code}
+          {highlight(code, detectLanguage(code))}
         </pre>
         <div className="pointer-events-none absolute top-0 right-0 bottom-0 w-8 bg-gradient-to-l from-white dark:from-black to-transparent" />
       </div>
