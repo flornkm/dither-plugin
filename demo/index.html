@@ -4,6 +4,10 @@
 <head>
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/favicon-light.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Declared above the script on purpose: that script rewrites this tag's
+       content, and querySelector only finds it if it has already been parsed. -->
+  <meta name="theme-color" content="#ffffff" />
   <script>
     // Paint the stored theme before the first frame, so a dark-mode reload
     // never flashes white. Kept in sync with src/utils/theme.ts.
@@ -22,19 +26,31 @@
       } catch (e) {}
     })();
   </script>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="preconnect" href="https://cdn.floriankiem.com" crossorigin />
+
   <title>Dither Plugin for Tailwind CSS</title>
   <meta name="description" content="A CSS-only Tailwind plugin that adds dither effects to your elements." />
+  <meta name="author" content="Florian Kiem" />
+  <link rel="canonical" href="https://dither.floriankiem.com/" />
+
+  <meta property="og:site_name" content="Dither Plugin" />
   <meta property="og:title" content="Dither Plugin" />
   <meta property="og:description" content="A CSS-only Tailwind plugin that adds dither effects to your elements." />
   <meta property="og:url" content="https://dither.floriankiem.com/" />
   <meta property="og:image" content="https://dither.floriankiem.com/images/og-image.png" />
+  <!-- Dimensions let an unfurler lay the card out without fetching the image
+       first, which is the difference between a preview appearing instantly
+       and appearing a beat late. -->
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:type" content="image/png" />
   <meta property="og:type" content="website" />
+
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Dither Plugin" />
   <meta name="twitter:description" content="A CSS-only Tailwind plugin that adds dither effects to your elements." />
   <meta name="twitter:image" content="https://dither.floriankiem.com/images/og-image.png" />
+  <meta name="twitter:creator" content="@flornkm" />
 </head>
 
 <body>
