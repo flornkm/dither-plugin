@@ -42,7 +42,7 @@ export function ThemeToggle({
           {theme === value && (
             <motion.span
               layoutId="theme-toggle"
-              className="absolute inset-0 rounded-full bg-white dark:bg-neutral-800 shadow-sm shadow-black/5 dark:shadow-black/40"
+              className="absolute inset-0 rounded-full bg-white dark:bg-neutral-800 smooth-shadow-ring-xs"
               transition={{ type: "spring", duration: 0.4, bounce: 0.15 }}
             />
           )}

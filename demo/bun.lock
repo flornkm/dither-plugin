@@ -16,6 +16,7 @@
         "motion": "^12.38.0",
         "react": "^19.1.1",
         "react-dom": "^19.1.1",
+        "shadow-plugin": "^1.2.1",
         "tailwind-merge": "^3.3.1",
         "tailwindcss": "^4.1.13",
       },
@@ -549,6 +550,8 @@
     "scheduler": ["scheduler@0.26.0", "", {}, "sha512-NlHwttCI/l5gCPR3D1nNXtWABUmBwvZpEQiD4IXSbIDq8BzLIK/7Ir5gTFSGZDUu37K5cMNp0hFtzO38sC7gWA=="],
 
     "semver": ["semver@6.3.1", "", { "bin": { "semver": "bin/semver.js" } }, "sha512-BR7VvDCVHO+q2xBEWskxS6DJE1qRnb7DxzUrogb71CWoSficBxYsiAGd+Kl0mmq/MprG9yArRkyrQxTO6XjMzA=="],
+
+    "shadow-plugin": ["shadow-plugin@1.2.1", "", {}, "sha512-yPkKk0qbCNMHipVpa6fxJFBJScXZLphv1HuTp48gUMNfs6F6CuUYxFasbGau58iBnrc6otN+Eix1lGTXdoDAKQ=="],
 
     "shebang-command": ["shebang-command@2.0.0", "", { "dependencies": { "shebang-regex": "^3.0.0" } }, "sha512-kHxr2zZpYtdmrN1qDjrrX/Z1rR1kG8Dx+gkpK1G4eXmvXswmcE1hTWBWYUzlraYw1/yZp6YuDY77YtvbN0dmDA=="],
 

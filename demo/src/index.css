@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "dither-plugin";
+@import "shadow-plugin";
 
 /* Drive `dark:` off a class instead of the media query, so the toggle in the
    header can override the system setting. The inline script in index.html puts
@@ -50,4 +51,11 @@ h6 {
 
 .scrollbar-none::-webkit-scrollbar {
   display: none;
+}
+
+/* Nudge the smooth-shadow ring hairline up in dark mode, matching the shadow
+   plugin's own demo. The plugin flips it to transparent white under `.dark`
+   already; this page just wants a little more of it. */
+.dark {
+  --smooth-ring-color: rgba(255, 255, 255, 0.14);
 }
